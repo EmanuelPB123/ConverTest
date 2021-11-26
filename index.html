@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fa.css">
+    <link rel="stylesheet" href="css/styles.css">
+<!--     <title>Conversor de unidades - Dennis</title> -->
+<title>Conversor de unidades</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1>Converidor de Unidades</h1>
+        <hr>
+        <div class="row "><br>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+
+                    <input type="text" class="form-control" id="principal" placeholder="256 bits a megabytes"
+                        autocomplete="off">
+                        <label for="principal">
+                            <h2></h2>
+                            <button class="btn btn-info" id="mostrarEjemplo">
+                                <h4>Ver un ejemplo</h4>
+                            </button>
+                        </label>
+                </div>
+                <br>
+                <div class="alert" id="resultado">
+                </div>
+                <br>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ocultable" hidden="hidden">
+                    <div class="row ">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="grupoUnidades">Unidad de medida</label>
+                                <select name="grupoUnidades" id="grupoUnidades" class="form-control"></select>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <label for="primeraUnidad">De</label>
+                            <input id="inputPrimeraUnidad" type="text" class="form-control">
+                            <br>
+                            <select name="primeraUnidad" id="primeraUnidad" class="form-control select"></select>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <label for="segundaUnidad">A</label>
+                            <input id="inputSegundaUnidad" type="text" class="form-control">
+                            <br>
+                            <select name="segundaUnidad" id="segundaUnidad" class="form-control"></select>
+                        </div>
+                        <br>
+                    </div>
+                    <br>
+                </div>
+                <br><br><br><br>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="position: fixed;bottom: 2rem;"><br>
+                    <button id="btn-about" class="btn btn-primary form-control"><i
+                            class="material-icons fa fa-info-circle"></i> Acerca de
+                    </button>
+                </div>
+
+            </div>
+            <div id="acercaDe" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+<!--                         <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="text-center">¡Hola!, me llamo Dennis y puedo convertir unidades.<br>
+                                <strong>Nota:</strong>
+                                Por el momento no entiendo las abreviaciones como "km" o "m",
+                                pero mejoraré día a día. <i class="fa fa-smile-o"></i>
+                            </h4>
+                        </div> -->
+                        <div class="modal-body">
+                            <!-- <strong>Unidades que puedo convertir hasta el momento:</strong> -->
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success">Longitud</li>
+                                <li class="list-group-item list-group-item-success">Masa</li>
+                                <li class="list-group-item list-group-item-success">Tiempo - Gracias a <strong><a
+                                            href="https://twitter.com/MariJose961128">Marijo Sacramento</a></strong> por
+                                    escribir las equivalencias
+                                </li>
+                                <li class="list-group-item list-group-item-success">Energía - Gracias a <strong><a
+                                            href="https://twitter.com/MariJose961128">Marijo Sacramento</a></strong> por
+                                    escribir las equivalencias
+                                </li>
+                                <li class="list-group-item list-group-item-success">Frecuencia - Gracias a <strong><a
+                                            href="https://twitter.com/MariJose961128">Marijo Sacramento</a></strong> por
+                                    escribir las equivalencias
+                                </li>
+                                <li class="list-group-item list-group-item-success">Presión - Gracias a <strong><a
+                                            href="https://twitter.com/MariJose961128">Marijo Sacramento</a></strong> por
+                                    escribir las equivalencias
+                                </li>
+                                <li class="list-group-item list-group-item-success">Tamaño de datos - Gracias a
+                                    <strong><a href="https://twitter.com/MariJose961128">Marijo Sacramento</a></strong>
+                                    por
+                                    escribir las equivalencias
+                                </li>
+
+                                <li class="list-group-item list-group-item-success">Temperatura</li>
+                                <li class="list-group-item list-group-item-success">Velocidad</li>
+                                <li class="list-group-item list-group-item-success">Volumen</li>
+                                <li class="list-group-item list-group-item-success">Área - Gracias a <strong><a
+                                            href="https://twitter.com/MariJose961128">Marijo Sacramento</a></strong> por
+                                    escribir las equivalencias
+                                </li>
+                            </ul>
+                            <br>
+                            <!-- <p>Más unidades vienen en camino...</p>
+                            <p>Creado y mantenido por <a href="https://www.facebook.com/cabrerabenito">Luis Cabrera
+                                    Benito</a></p>
+                            <p>Programado en Javascript utilizando jQuery. Los estilos y algunas funcionalidades son
+                                gracias
+                                a Bootstrap.</p>
+                            <p>Código fuente disponible en GitHub. <a
+                                    href="https://github.com/parzibyte/dennis-conversor">Ver código</a></p>
+                            <hr>
+                            <p>Bautizado como Dennis en honor a <strong><a
+                                        href="https://es.wikipedia.org/wiki/Dennis_Ritchie">Dennis Ritchie</a></strong>
+                            </p> -->
+                            <!-- <blockquote>
+                                <p>Vacía tu memoria con un <i>free()</i>, como un puntero.
+                                    <br>
+                                    Si casteas un puntero a un <i>entero</i>, se convierte en un <i>entero</i>,
+                                    <br>
+                                    si casteas un puntero a un <i>struct</i>, se convierte en un <i>struct</i>.
+                                    <br>
+                                    El puntero puede estallar,
+                                    <br>
+                                    el puntero se puede sobrecargar,
+                                    <br>
+                                    ¡Sé un puntero, amigo mío!
+                                </p>
+                                <footer>Dennis Ritchie</footer>
+                            </blockquote> -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="manual" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--                             <h4 class="text-center">Cómo hablarle a Dennis</h4> -->
+                            <h4 class="text-center">Ejemplos</h4>
+                        </div>
+                        <div class="modal-body text-center">
+<!--                             <p>Dennis aceptará que le hables como a una persona con frases como:</p><br> -->
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-success">1 milla a metros</li>
+                                <li class="list-group-item list-group-item-success">15.05 libra por pulgada cuadrada en
+                                    atmosfera
+                                </li>
+                                <li class="list-group-item list-group-item-success">28 año natural a siglo</li>
+                                <li class="list-group-item list-group-item-success">11 kilohertz a hercios</li>
+                                <li class="list-group-item list-group-item-success">96 bits en kilobits</li>
+                                <h4>Unidades</h4>
+                                <li class="list-group-item list-group-item-success">micro-m=micrometro</li>
+                                <li class="list-group-item list-group-item-success">microg=microgramo</li>                            </ul>
+                            <br>
+                            <!-- <p><strong>Nota: </strong>Dennis acepta palabras en singular, y en plural (por ejemplo,
+                                "metros") pero solamente si
+                                la unidad no tiene espacios. Ya que por ejemplo "grados celsius" no será detectado
+                                correctamente. En ese caso
+                                es mejor escribir "grado celsius".</p>
+                            <br>
+                            <p>Conforme vayas escribiendo, Dennis te avisará si es que tienes un error</p>
+                            <img src="img/1.png" alt="Imagen 1" class="img img-responsive img-thumbnail">
+                            <br>
+                            <p>Si Dennis no reconoce una unidad (a veces es porque no reconoce los plurales, por ejemplo
+                                "años naturales") te lo dirá.</p>
+
+                            <img src="img/2.png" alt="Imagen 2" class="img img-responsive img-thumbnail"><br>
+                            <br>
+                            <p>Una vez que Dennis haya reconocido lo que le dijiste, lo convertirá y te mostrará unos
+                                formularios</p>
+
+                            <img src="img/3.png" alt="Imagen 3" class="img img-responsive img-thumbnail"><br>
+                            <p>Dichos formularios son para que interactúes mejor con Dennis, y no tengas que estar
+                                escribiendo.</p>
+                            <p>Puedes mover y cambiar valores a tu gusto.</p>
+
+                            <img src="img/4.png" alt="Imagen 4" class="img img-responsive img-thumbnail"><br>
+                            <img src="img/5.png" alt="Imagen 5" class="img img-responsive img-thumbnail"><br>
+                            <img src="img/6.png" alt="Imagen 6" class="img img-responsive img-thumbnail"><br> -->
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Entendido</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/unidades.js"></script>
+    <script type="text/javascript" src="js/conversor.js"></script>
+</body>
+
+</html>
